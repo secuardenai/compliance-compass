@@ -1,0 +1,2078 @@
+[
+  {
+    "id": "C1-1",
+    "standard": "OWASP",
+    "category": "C1: Define Security Requirements",
+    "title": "Verify the use of a secure software development lifecycle that addresses security in all stages of development.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.1.1"
+      ],
+      "nist": [
+        "PO.1.1",
+        "PO.1.4"
+      ]
+    },
+    "recommendation": "Create a secure development lifecycle program/process that will enable development and security teams to ensure that security is incorporated into all phases of the software development workflow.\n\nReferences:\nhttps://www.microsoft.com/en-us/securityengineering/sdl"
+  },
+  {
+    "id": "C1-2",
+    "standard": "OWASP",
+    "category": "C1: Define Security Requirements",
+    "title": "Verify definition and security analysis of the application's high-level architecture and all connected remote service.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.1.1"
+      ],
+      "nist": [
+        "PO.1.2"
+      ]
+    },
+    "recommendation": "As part of the secure development lifecycle, incorporate architecture reviews of an applications and its related services to ensure that security controls are implemented and enforced. These controls should atleast cover: Input validation, Exception Handling, Output Encoding, Use of Cryptography, Session Management, Authentication, Authorization and Audit Loggging."
+  },
+  {
+    "id": "C1-3",
+    "standard": "OWASP",
+    "category": "C1: Define Security Requirements",
+    "title": "Verify availability of a secure coding checklist, security requirements, guideline, or policy to all developers and testers.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.1.1"
+      ],
+      "nist": [
+        "PO.1.1"
+      ]
+    },
+    "recommendation": "As part of the secure development lifecycle, allow the developers to have access to secure coding guidelines for their technology stack. These guidelines can be checklists that they review and learn, IDE plugins, etc."
+  },
+  {
+    "id": "C2-1",
+    "standard": "OWASP",
+    "category": "C2: Leverage Security Frameworks and Libraries",
+    "title": "Verify that all components are up to date, preferably using a dependency checker during build or compile time.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.6.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "Use a dependency checker that checks for security vulnerabilities in libraries used by the software. Example software that can help achieve this is `npm audit`, OWASP Dependency Checker.\n\nReferences: \nhttps://auth0.com/blog/third-party-assets-security-risks-management/"
+  },
+  {
+    "id": "C2-2",
+    "standard": "OWASP",
+    "category": "C2: Leverage Security Frameworks and Libraries",
+    "title": "Verify that third party components come from pre-defined, trusted and continually maintained repositories.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.4",
+        "A.12.5.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "Components that are sourced from central public repositories, ensure that such sources support code-signing and verification requirements. In case there are repositores that do not support such basic checks, consider sourcing the components from a private repository. \n\nPer OWASP \"Private repositories refer to repositories where access is limited, usually software that organizations install and control, or a commercially available service. Golden repositories containing vetted or permitted components are a common use-case for private repositories. Private repository services focusing on security may additionally provide anti-malware analysis and static source code analysis requirements prior to acceptance in the repository. When leveraging private repositories, it is important to have traceability to the components\u2019 repository of origin.\""
+  },
+  {
+    "id": "C2-3",
+    "standard": "OWASP",
+    "category": "C2: Leverage Security Frameworks and Libraries",
+    "title": "Verify that an inventory catalog is maintained of all third party libraries in use.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.8.1.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "Use a dependency management solution for your product."
+  },
+  {
+    "id": "C2-4",
+    "standard": "OWASP",
+    "category": "C2: Leverage Security Frameworks and Libraries",
+    "title": "Verify that the attack surface is reduced by sandboxing or encapsulating third party libraries to expose only the required behaviour into the application.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.6"
+      ],
+      "nist": []
+    },
+    "recommendation": "If a third party component supports broader functionalities then consider disabling the ones that you do not require. Only use the minimal set of functionalities that you need from any third party library."
+  },
+  {
+    "id": "C3-1",
+    "standard": "OWASP",
+    "category": "C3: Secure Database Access",
+    "title": "Verify the use of unique or special low-privilege operating system accounts for all application components, services, and servers.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Ensure that: \n(1) All accounts that are used to run applications and services (like web servers, data base servers, etc) are unique. No shared accounts.\n(2) The permissions granted to the accounts used to run applications and services are setup with the least amount of permissions that these need to provide the funtionality."
+  },
+  {
+    "id": "C3-2",
+    "standard": "OWASP",
+    "category": "C3: Secure Database Access",
+    "title": "Verify that communications between application components, including APIs, middleware and data layers, are authenticated. Components should have the least necessary privileges needed.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Enforce TLS (1.2 or above), with mutual authentication as far as possible, for any communications that travels over potentially untrusted network. This is applicable for internal networks too."
+  },
+  {
+    "id": "C3-3",
+    "standard": "OWASP",
+    "category": "C3: Secure Database Access",
+    "title": "Verify the application encrypts communications between components, particularly when these components are in different containers, systems, sites, or cloud providers.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.1.2"
+      ],
+      "nist": []
+    },
+    "recommendation": "Enforce TLS (1.2 or above), with mutual authentication as far as possible, for any communications that travels over potentially untrusted network. This is applicable for internal networks too."
+  },
+  {
+    "id": "C3-4",
+    "standard": "OWASP",
+    "category": "C3: Secure Database Access",
+    "title": "Verify that data selection or database queries (e.g. SQL, HQL, ORM, NoSQL) use parameterized queries, ORMs, entity frameworks, or are otherwise protected from database injection attacks.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.1.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Donot allow end user controlled content to be used as part of SQL queries. If not possible, use parameterized queries, ORMs, entity frameworks, or are otherwise protected from database injection attacks.\n\nReferences:\n1. https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html\n2. https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html"
+  },
+  {
+    "id": "C3-5",
+    "standard": "OWASP",
+    "category": "C3: Secure Database Access",
+    "title": "Verify that where parameterized or safer mechanisms are not present, context-specific output encoding is used to protect against injection attacks, such as the use of SQL escaping to protect against SQL injection.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.1.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Donot allow end user controlled content to be used as part of SQL queries. If not possible and if use of parameterized queries, ORMs, entity frameworks, or similar is not possible, enforce context-specific output encoding to protect against injection attacks, such as the use of SQL escaping to protect against SQL injection."
+  },
+  {
+    "id": "C4-1",
+    "standard": "OWASP",
+    "category": "C4: Encode and Escape Data",
+    "title": "Verify that the application protects against JavaScript or JSON injection attacks, including for eval attacks, remote JavaScript includes, Content Security Policy (CSP) bypasses, DOM XSS, and JavaScript expression evaluation.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Enforce protection against JavaScript or JSON injection attacks.\n\nReferences:\n1. https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html \n2. https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+  },
+  {
+    "id": "C4-2",
+    "standard": "OWASP",
+    "category": "C4: Encode and Escape Data",
+    "title": "Verify that the application protects against LDAP injection vulnerabilities, or that specific security controls to prevent LDAP injection have been implemented.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Enforce escaping for all variables using the right LDAP encoding function.\n\nReferences:\n1. https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html"
+  },
+  {
+    "id": "C4-3",
+    "standard": "OWASP",
+    "category": "C4: Encode and Escape Data",
+    "title": "Verify that the application protects against OS command injection and that operating system calls use parameterized OS queries or use contextual command line output encoding.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "As part of security training of developers, enforce the practice to avoid calling OS commands directly.\n\nReferences:\n1. https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html"
+  },
+  {
+    "id": "C4-4",
+    "standard": "OWASP",
+    "category": "C4: Encode and Escape Data",
+    "title": "Verify that the application protects against XPath injection or XML injection attacks.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "References:\n\n1. https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html \n2. https://owasp.org/www-project-top-ten/2017/A4_2017-XML_External_Entities_(XXE).html"
+  },
+  {
+    "id": "C4-5",
+    "standard": "OWASP",
+    "category": "C4: Encode and Escape Data",
+    "title": "Verify that output encoding occurs close to or by the interpreter for which it is intended.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Enforce context sensitive output encoding.\n\nReferences:\nhttps://www.veracode.com/sites/default/files/pdf/resources/guides/secure-coding-best-practices-handbook-veracode-guide.pdf?_ga=2.105190659.1050756032.1602784800-"
+  },
+  {
+    "id": "C4-6",
+    "standard": "OWASP",
+    "category": "C4: Encode and Escape Data",
+    "title": "Verify that output encoding is relevant for the interpreter and context required.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "[From OWASP ASVS] Use encoders specifically for HTML values, HTML attributes, JavaScript, URL parameters, HTTP headers, SMTP, and others as the context requires, especially from untrusted inputs"
+  },
+  {
+    "id": "C4-7",
+    "standard": "OWASP",
+    "category": "C4: Encode and Escape Data",
+    "title": "Verify that output encoding preserves the user's chosen character set and locale, such that any Unicode character point is valid and safely handled.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "[From OWASP ASVS] Use encoders specifically for HTML values, HTML attributes, JavaScript, URL parameters, HTTP headers, SMTP, and others as the context requires, especially from untrusted inputs"
+  },
+  {
+    "id": "C4-8",
+    "standard": "OWASP",
+    "category": "C4: Encode and Escape Data",
+    "title": "Verify that context-aware, preferably automated - or at worst, manual - output escaping protects against reflected, stored, and DOM based XSS.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "[From OWASP ASVS] Use encoders specifically for HTML values, HTML attributes, JavaScript, URL parameters, HTTP headers, SMTP, and others as the context requires, especially from untrusted inputs"
+  },
+  {
+    "id": "C5-1",
+    "standard": "OWASP",
+    "category": "C5: Validate All Inputs",
+    "title": "Verify that the application logs security relevant events including successful and failed authentication events, access control failures, deserialization failures and input validation failures.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Ensure that:\n(1) all input to an application or service are validated before these are processed\n(2) any and all input validation failures are logged. All log entries that contains user supplied values must be sanitized."
+  },
+  {
+    "id": "C5-2",
+    "standard": "OWASP",
+    "category": "C5: Validate All Inputs",
+    "title": "Verify that serialized objects use integrity checks or are encrypted to prevent hostile object creation or data tampering.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer \"How to prevent\" section here: https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization\nAlso, https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.htmll"
+  },
+  {
+    "id": "C5-3",
+    "standard": "OWASP",
+    "category": "C5: Validate All Inputs",
+    "title": "Verify that input validation is enforced on a trusted service layer.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Ensure that all input validations are performed at a point in the data flow. This is to ensure that an adversary cannot interfere with the validation logic.\n\nRefer the \"Input Validation\" information here: https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html"
+  },
+  {
+    "id": "C5-4",
+    "standard": "OWASP",
+    "category": "C5: Validate All Inputs",
+    "title": "Verify that application deployments adequately sandbox, containerize and/or isolate at the network level to delay and deter attackers from attacking other applications, especially when they are performing sensitive or dangerous actions such as deserialization.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer \"How to prevent\" section here: https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization\nAlso, https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html"
+  },
+  {
+    "id": "C5-5",
+    "standard": "OWASP",
+    "category": "C5: Validate All Inputs",
+    "title": "Verify that frameworks protect against mass parameter assignment attacks, or that the application has countermeasures to protect against unsafe parameter assignment, such as marking fields private or similar.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer: https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html"
+  },
+  {
+    "id": "C5-6",
+    "standard": "OWASP",
+    "category": "C5: Validate All Inputs",
+    "title": "Verify that all input (HTML form fields, REST requests, URL parameters, HTTP headers, cookies, batch files, RSS feeds, etc) is validated using positive validation (allow lists).",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "When building secure software, allowlisting is the recommended minimal approach.\nRefer: \"Allowlisting vs Denylisting\" section here: https://owasp.org/www-project-proactive-controls/v3/en/c5-validate-inputs"
+  },
+  {
+    "id": "C5-7",
+    "standard": "OWASP",
+    "category": "C5: Validate All Inputs",
+    "title": "Verify that structured data is strongly typed and validated against a defined schema including allowed characters, length and pattern (e.g. credit card numbers or telephone, or validating that two related fields are reasonable, such as checking that suburb and zip/postcode match).",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Enforce syntactic validations for correct syntax of structured fields (e.g. SSN, date, currency symbol).\nRefer \"Input validation strategies\" here: https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html"
+  },
+  {
+    "id": "C5-8",
+    "standard": "OWASP",
+    "category": "C5: Validate All Inputs",
+    "title": "Verify that all untrusted HTML input from WYSIWYG editors or similar is properly sanitized with an HTML sanitizer library or framework feature.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.14.2.1",
+        "A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the \"Rule #6\" here: https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#RULE_.236_-_Sanitize_HTML_Markup_with_a_Library_Designed_for_the_Job"
+  },
+  {
+    "id": "C6-1",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that user set passwords are at least 12 characters in length (after multiple spaces are combined).",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the \"Implement Proper Password Strength Controls\" section here: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls"
+  },
+  {
+    "id": "C6-2",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that passwords 64 characters or longer are permitted but may be no longer than 128 characters.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the \"Implement Proper Password Strength Controls\" section here: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls \n\nAlso, following writeup is a great read: https://blog.1password.com/how-long-should-my-passwords-be/"
+  },
+  {
+    "id": "C6-3",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that password truncation is not performed. However, consecutive multiple spaces may be replaced by a single space.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#maximum-password-lengths"
+  },
+  {
+    "id": "C6-4",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that passwords submitted during account registration, login, and password change are checked against a set of breached passwords",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Leverage a service like Have I Been Pwned implement this check."
+  },
+  {
+    "id": "C6-5",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that there are no password composition rules limiting the type of characters permitted. There should be no requirement for upper or lower case or numbers or special characters.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Ensure that for your applications there are no password composition rules limiting the type of characters permitted. There should be no requirement for upper or lower case or numbers or special characters.\n\nPer NIST SP800 63B \"Verifiers SHOULD NOT impose other composition rules (e.g., requiring mixtures of different character types or prohibiting consecutively repeated characters) for memorized secrets. Verifiers SHOULD NOT require memorized secrets to be changed arbitrarily (e.g., periodically). However, verifiers SHALL force a change if there is evidence of compromise of the authenticator.\""
+  },
+  {
+    "id": "C6-6",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that passwords are stored in a form that is resistant to offline attacks.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Ensure that:\nPasswords are salted and hashed using a suitable one-way key derivation function (refer \"Password Hashing Algorithms\" here). ( Details: These key derivation functions take a password, a salt, and a cost factor as inputs then generate a password hash. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive. Ref: NIST SP800 63B"
+  },
+  {
+    "id": "C6-7",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that the salt is at least 32 bits in length and be chosen arbitrarily to minimize salt value collisions among stored hashes.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Ensure that a password salt is at least 32 bits in length and be chosen arbitrarily so as to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash SHALL be stored for each subscriber using a memorized secret authenticator. Ref: NIST SP800 63B"
+  },
+  {
+    "id": "C6-8",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that if PBKDF2 is used, the iteration count SHOULD be as large as verification server performance will allow, typically at least 100,000 iterations.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the guidance here: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#pbkdf2"
+  },
+  {
+    "id": "C6-9",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that if bcrypt is used, the work factor SHOULD be as large as verification server performance will allow, typically at least 13.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the guidance here: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#bcrypt\n\nPer NIST SP800 63B: \"For PBKDF2, the cost factor is an iteration count: the more times the PBKDF2 function is iterated, the longer it takes to compute the password hash. Therefore, the iteration count SHOULD be as large as verification server performance will allow, typically at least 10,000 iterations.\""
+  },
+  {
+    "id": "C6-10",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that a system generated initial activation or recovery secret is not sent in clear text to the user.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the guidance here: https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html"
+  },
+  {
+    "id": "C6-11",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify password credential recovery does not reveal the current password in any way.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the guidance here: https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html"
+  },
+  {
+    "id": "C6-12",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify forgotten password, and other recovery paths use a secure recovery mechanism, such as time-based OTP (TOTP) or other soft token, mobile push, or another offline recovery mechanism.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the guidance here: https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html"
+  },
+  {
+    "id": "C6-13",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify the application generates a new session token on user authentication.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the information here: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#renew-the-session-id-after-any-privilege-level-change"
+  },
+  {
+    "id": "C6-14",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that session tokens possess at least 64 bits of entropy.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer the information here: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#session-id-entropy"
+  },
+  {
+    "id": "C6-15",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that session token are generated using approved cryptographic algorithms.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Ensure that session token are generated using a cryptographically strong PRNG. \nRefer: https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator"
+  },
+  {
+    "id": "C6-16",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that logout and expiration invalidate the session token.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Refer information:\n1) Here: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#logout-button \n2) Here: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#session-expiration"
+  },
+  {
+    "id": "C6-17",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "If authenticators permit users to remain logged in, verify that re-authentication occurs periodically both when actively used or after an idle period.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C6-18",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that cookie-based session tokens have the 'Secure' attribute set.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#secure-attribute"
+  },
+  {
+    "id": "C6-19",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that cookie-based session tokens have the 'HttpOnly' attribute set.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#httponly-attribute"
+  },
+  {
+    "id": "C6-20",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that cookie-based session tokens utilize the 'SameSite' attribute to limit exposure to cross-site request forgery attacks.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Review the details here: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#samesite-attribute"
+  },
+  {
+    "id": "C6-21",
+    "standard": "OWASP",
+    "category": "C6: Implement Digital Identity",
+    "title": "Verify that if the application is published under a domain name with other applications that set or use session cookies that might override or disclose the session cookies, set the path attribute in cookie-based session tokens using the most precise path possible.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Carefully review the information here for guidance: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#domain-and-path-attributes"
+  },
+  {
+    "id": "C7-1",
+    "standard": "OWASP",
+    "category": "C7: Enforce Access Controls",
+    "title": "Verify the application uses a single and well-vetted access control mechanism for accessing protected data and resources. All requests must pass through this single mechanism to avoid copy and paste or insecure alternative paths.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Review the application architecture and code to ensure that all access to protected resources are restricted using a well vetter method. Also ensure that the implementation of the protection mechanism is correct."
+  },
+  {
+    "id": "C7-2",
+    "standard": "OWASP",
+    "category": "C7: Enforce Access Controls",
+    "title": "Verify that attribute or feature-based access control is used whereby the code checks the user's authorization for a feature/data item rather than just their role. Permissions should still be allocated using roles.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.9.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "Review the information here to determine what applies in our specific situation: https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html"
+  },
+  {
+    "id": "C7-3",
+    "standard": "OWASP",
+    "category": "C7: Enforce Access Controls",
+    "title": "Verify that the principle of least privilege exists",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.9.2.3"
+      ],
+      "nist": [
+        "PS.1.1"
+      ]
+    },
+    "recommendation": "1) Review all accounts that have access to restricted resources and confirm that they have only the minimal permissions needed to complete their role."
+  },
+  {
+    "id": "C7-4",
+    "standard": "OWASP",
+    "category": "C7: Enforce Access Controls",
+    "title": "Verify that the principle of deny by default exists whereby new users/roles start with minimal or no permissions and users/roles do not receive access to new features until access is explicitly assigned.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.9.2.3"
+      ],
+      "nist": [
+        "PS.1.1"
+      ]
+    },
+    "recommendation": "1) Review all accounts that have access to restricted resources and confirm that they have only the minimal permissions needed to complete their role\n2) An access grant workflow must be defined that allows all new access requests to be reviewed before grant."
+  },
+  {
+    "id": "C7-5",
+    "standard": "OWASP",
+    "category": "C7: Enforce Access Controls",
+    "title": "Verify that the application logs security relevant events including successful and failed authentication events, access control failures, deserialization failures and input validation failures.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.3"
+      ],
+      "nist": [
+        "PO.3.2"
+      ]
+    },
+    "recommendation": "Refer: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+  },
+  {
+    "id": "C8-1",
+    "standard": "OWASP",
+    "category": "C8: Protect Data Everywhere",
+    "title": "Verify that industry proven or government approved cryptographic algorithms, modes, and libraries are used, instead of custom coded cryptography.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "PS.2.1"
+      ]
+    },
+    "recommendation": "Review implementation to confirm that no custom code  has been written to implement cryptographically sensitive security operations. Stick to standard means to implement cryotgraphic functions.\n \nRefer: https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html#custom-algorithms"
+  },
+  {
+    "id": "C8-2",
+    "standard": "OWASP",
+    "category": "C8: Protect Data Everywhere",
+    "title": "Verify that random number, encryption or hashing algorithms, key lengths, rounds, ciphers or modes, can be reconfigured, upgraded, or swapped at any time, to protect against cryptographic breaks.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.10.1.1"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C8-3",
+    "standard": "OWASP",
+    "category": "C8: Protect Data Everywhere",
+    "title": "Verify that a secrets management solution such as a key vault is used to securely create, store, control access to and destroy secrets.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.10.1.2"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C8-4",
+    "standard": "OWASP",
+    "category": "C8: Protect Data Everywhere",
+    "title": "Verify that key material is not exposed to the application but instead uses an isolated security module like a vault for cryptographic operations.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.10.1.1"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C8-5",
+    "standard": "OWASP",
+    "category": "C8: Protect Data Everywhere",
+    "title": "Verify that all sensitive data created and processed by the application has been identified, and ensure that a policy is in place on how to deal with sensitive data.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C8"
+      ],
+      "iso27001": [
+        "A.14.3.1"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C8-6",
+    "standard": "OWASP",
+    "category": "C8: Protect Data Everywhere",
+    "title": "Verify that sensitive or private information that is required to be encrypted, is encrypted using approved algorithms that provide both confidentiality and integrity.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C8-7",
+    "standard": "OWASP",
+    "category": "C8: Protect Data Everywhere",
+    "title": "Verify that secured TLS is used for all client connectivity, and does not fall back to insecure or unencrypted protocols.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-1",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify the application monitors for unusual events or activity from a business logic perspective. For example, attempts to perform actions out of order or actions which a normal user would never attempt.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-2",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that a common logging format and approach is used across the system.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-3",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that logs are securely transmitted to a preferably remote system for analysis, detection, alerting, and escalation.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-4",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that the application does not log credentials or payment details. Session tokens should only be stored in logs in an irreversible, hashed form.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-5",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that the application does not log other sensitive data as defined under local privacy laws or relevant security policy.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-6",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that each log event includes necessary information that would allow for a detailed investigation of the timeline when an event happens.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-7",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that the application appropriately encodes user-supplied data to prevent log injection.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-8",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that all events are protected from injection when viewed in log viewing software.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-9",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that security logs are protected from unauthorized access and modification.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C9-10",
+    "standard": "OWASP",
+    "category": "C9: Implement Security Logging and Monitoring",
+    "title": "Verify that time sources are synchronized to the correct time and time zone. Strongly consider logging only in UTC if systems are global to assist with post-incident forensic analysis.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "A.12.4.1",
+        "A.12.4.2",
+        "A.12.4.3",
+        "A.12.4.4"
+      ],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C10-1",
+    "standard": "OWASP",
+    "category": "C10: Handle All Errors and Exception",
+    "title": "Verify that the application does not log credentials or payment details. Session tokens should only be stored in logs in an irreversible, hashed form.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C10-2",
+    "standard": "OWASP",
+    "category": "C10: Handle All Errors and Exception",
+    "title": "Verify that a generic message is shown when an unexpected or security sensitive error occurs, potentially with a unique ID which support personnel can use to investigate.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C10-3",
+    "standard": "OWASP",
+    "category": "C10: Handle All Errors and Exception",
+    "title": "Verify that exception handling (or a functional equivalent) is used across the codebase to account for expected and unexpected error conditions.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C10-4",
+    "standard": "OWASP",
+    "category": "C10: Handle All Errors and Exception",
+    "title": "Verify that a \"last resort\" error handler is defined which will catch all unhandled exceptions.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C10-5",
+    "standard": "OWASP",
+    "category": "C10: Handle All Errors and Exception",
+    "title": "Verify implementation of centralized, simple (economy of design), vetted, secure, and reusable security controls to avoid duplicate, missing, ineffective, or insecure controls.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": ""
+  },
+  {
+    "id": "C10-6",
+    "standard": "OWASP",
+    "category": "C10: Handle All Errors and Exception",
+    "title": "Verify that access controls fail securely including when an exception occurs.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Recommendations: Do proper error handling to prevent the error may cause the application to traverse; \ninto an insecure state. Resources should be locked down and released, sessions terminated (if required), and calculations\nor business logic should be halted (depending on the type of error, of course).\n\nReference:  OWASP_Code_Review_Guide_v2"
+  },
+  {
+    "id": "A.9.2.3",
+    "standard": "ISO27001",
+    "category": "Management of privileged access rights",
+    "title": "The allocation and use of privileged access rights shall be restricted and controlled.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C3",
+        "OPSC-C7"
+      ],
+      "iso27001": [],
+      "nist": [
+        "PO.2"
+      ]
+    },
+    "recommendation": "(1) Maintain a process to determine the privileged access requriements for each application/system.\n(2) All grants of privileged access must be on a need to use basis and not a blanket approval.\n(3) Maintain audit log of privilege permissions grants. \n(4) Ensure that these are reviewed at regular intervals to ensure that all permission on the applications are mapped to role/duties."
+  },
+  {
+    "id": "A.9.2.4",
+    "standard": "ISO27001",
+    "category": "Use of secret authentication\ninformation",
+    "title": "Users shall be required to follow the organization\u2019s practices in the\nuse of secret authentication information.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C6"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Secret authentication information includes keys, passwords, pins, etc. and needs to be managed through a defined management workflow in the applications, systems.\n\nEnsure that:\n(1) There is a defined policy on authenticating users\nEnsure that all access grants to the restricted areas of an application/system verifies the identity of the requesting user.\n(2) Any workflows to reset authentication information must first verify the requestor identity"
+  },
+  {
+    "id": "A.10.1.2",
+    "standard": "ISO27001",
+    "category": "Key management",
+    "title": "Verify that a policy on the use, protection and lifetime of cryptographic keys is developed and implemented through their whole lifecycle.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C8"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "(1) Develop a policy to provide guidance on the secure use of cyptographic keys that also includes guidance around the accepted key lifecycle management"
+  },
+  {
+    "id": "A.12.1.2",
+    "standard": "ISO27001",
+    "category": "Change management",
+    "title": "Changes to the organization, business processes, information processing facilities and systems that affect information security shall be controlled.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "PS.1"
+      ]
+    },
+    "recommendation": "Ensure that there is a well defined change management workflow. This doesnot necessarily mean that there has to be a change management commitee that review all changes. Rather there should be capabilities that can ensure that accidental or intentional changes don't end up affecting a system in unexpected ways. Example: enforce a rigorous PR review process for code changes, etc."
+  },
+  {
+    "id": "A.12.1.4",
+    "standard": "ISO27001",
+    "category": "Separation of development, testing and operational environments",
+    "title": "Development, testing, and operational environments shall be separated to reduce the risks of unauthorized access or changes to the operational environment.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1) Development and test environments must be kept separate from environments with live data.\n2) Ensure that there is a well defined change management workflow. This doesnot necessarily mean that there has to be a change management commitee that review all changes. Rather there should be capabilities that can ensure that accidental or intentional changes don't end up affecting a system in unexpected ways. Example: enforce a rigorous PR review process for code changes, etc."
+  },
+  {
+    "id": "A.12.3.1",
+    "standard": "ISO27001",
+    "category": "Information backup",
+    "title": "Backup copies of information, software and system images shall be taken and tested regularly in accordance with an agreed backup policy.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C8"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Ensure that regular testing of backups is carried out to ensure that restorations will be successful and can be achieved in a timely manner."
+  },
+  {
+    "id": "A.12.4.1",
+    "standard": "ISO27001",
+    "category": "Event logging",
+    "title": "Event logs recording user activities, exceptions, faults and information security events shall be produced, kept and regularly reviewed.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C5"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+  },
+  {
+    "id": "A.12.4.2",
+    "standard": "ISO27001",
+    "category": "Protection of log information",
+    "title": "Logging facilities and log information shall be protected against tampering and unauthorized access.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C5"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+  },
+  {
+    "id": "A.12.4.3",
+    "standard": "ISO27001",
+    "category": "Administrator and operator logs",
+    "title": "System administrator and system operator activities shall be logged and the logs protected and regularly reviewed.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C5"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+  },
+  {
+    "id": "A.12.4.4",
+    "standard": "ISO27001",
+    "category": "Clock synchronisation",
+    "title": "The clocks of all relevant information processing systems within an organization or security domain shall be synchronised to a single reference time source.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C9"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+  },
+  {
+    "id": "A.12.6.1",
+    "standard": "ISO27001",
+    "category": "Management of technical vulnerabilities",
+    "title": "Information about technical vulnerabilities of information systems being used shall be obtained in a timely fashion, the organization\u2019s exposure to such vulnerabilities evaluated and appropriate measures taken to address the associated risk.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "RV.1"
+      ]
+    },
+    "recommendation": "1. Have a policy that addresses vulnerability disclosure and remediation, and implement the processes needed to support that policy.\n\n2. Have a security response playbook to handle a generic reported vulnerability, a report of zero-days, a vulnerability being exploited in the wild, and a major ongoing incident involving multiple parties.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "A.12.6.2",
+    "standard": "ISO27001",
+    "category": "Restrictions on software installation",
+    "title": "Rules governing the installation of software by users shall be established and implemented.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C3"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Provide development teams with a \u201cwhite-list\u201d what software may be installed or services that can be used."
+  },
+  {
+    "id": "A.14.1.1",
+    "standard": "ISO27001",
+    "category": "Information security requirements analysis and specification",
+    "title": "The information security related requirements shall be included in the requirements for new information systems or enhancements to existing information systems.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C1"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "As part of the secure development lifecycle, incorporate architecture reviews of an applications and its related services to ensure that security controls are implemented and enforced. These controls should atleast cover: Input validation, Exception Handling, Output Encoding, Use of Cryptography, Session Management, Authentication, Authorization and Audit Loggging."
+  },
+  {
+    "id": "A.14.1.2",
+    "standard": "ISO27001",
+    "category": "Securing application services on public networks",
+    "title": "Information involved in application services passing over public networks shall be protected from fraudulent activity, contract dispute and unauthorized disclosure and modification.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C3"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "(1) Enforce TLS (1.2 or above), with mutual authentication as far as possible, for any communications that travels over potentially untrusted network. This is applicable for internal networks too."
+  },
+  {
+    "id": "A.14.1.3",
+    "standard": "ISO27001",
+    "category": "Protecting application services transactions",
+    "title": "Information involved in application service transactions shall be protected to prevent incomplete transmission, mis-routing, unauthorized message alteration, unauthorized disclosure, unauthorized message duplication or replay.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C3"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "(1) Enforce TLS (1.2 or above), with mutual authentication as far as possible, for any communications that travels over potentially untrusted network. This is applicable for internal networks too.\n\n(2) As part of the secure development lifecycle, allow the developers to have access to secure coding guidelines for their technology stack. These guidelines can be checklists that they review and learn, IDE plugins, etc.\n\n(3) As part of the secure development lifecycle, incorporate architecture reviews of an applications and its related services to ensure that security controls are implemented and enforced. These controls should atleast cover: Input validation, Exception Handling, Output Encoding, Use of Cryptography, Session Management, Authentication, Authorization and Audit Loggging.\n\n(4) Ensure that all input validations are performed at a point in the data flow. This is to ensure that an adversary cannot interfere with the validation logic. Refer the \"Input Validation\" information here: https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html"
+  },
+  {
+    "id": "A.14.2.1",
+    "standard": "ISO27001",
+    "category": "Secure development policy",
+    "title": "Rules for the development of software and systems shall be established\nand applied to developments within the organization.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C3"
+      ],
+      "iso27001": [],
+      "nist": [
+        "NIST-NIST-SSDF-PO.1",
+        "NIST-NIST-SSDF-RV.3",
+        "NIST-NIST-SSDF-PW.2"
+      ]
+    },
+    "recommendation": "Create a secure development lifecycle program/process that will enable development and security teams to ensure that security is incorporated into all phases of the software development workflow.\n\nReferences:\nhttps://www.microsoft.com/en-us/securityengineering/sdl"
+  },
+  {
+    "id": "A.14.2.2",
+    "standard": "ISO27001",
+    "category": "System change control procedures",
+    "title": "Changes to systems within the development lifecycle shall be controlled by the use of formal change control procedures.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "NIST-NIST-SSDF-PS.1"
+      ]
+    },
+    "recommendation": "Ensure that there is a well defined change management workflow. This doesnot necessarily mean that there has to be a change management commitee that review all changes. Rather there should be capabilities that can ensure that accidental or intentional changes don't end up affecting a system in unexpected ways. Example: enforce a rigorous PR review process for code changes, etc."
+  },
+  {
+    "id": "A.14.2.3",
+    "standard": "ISO27001",
+    "category": "Technical review of applications after operating platform changes",
+    "title": "When operating platforms are changed, business critical applications shall be reviewed and tested to ensure there is no adverse impact on organizational operations or security.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "NIST-NIST-SSDF-PS.3",
+        "NIST-NIST-SSDF-PO.1"
+      ]
+    },
+    "recommendation": "1. Perform robust functional testing of security features.\n2. Integrate dynamic vulnerability testing into the project\u2019s automated test suite.\n3. Incorporate tests for previously reported vulnerabilities into the project\u2019s automated test suite to ensure that errors are not reintroduced.\n4. Use automated fuzz testing tools to find issues with input handling by native code.\n5. Use penetration testing to simulate how an attacker might attempt to compromise the software only in high-risk scenarios if resources are available.\n6. Use automated tools to identify and remediate documented and verified unsafe software practices on a continuous basis as executable code is checked into the code repository.\n7. Identify and document the root cause of each discovered issue.\n8. Document lessons learned from code testing in a knowledge base that developers can access and search.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "A.14.2.4",
+    "standard": "ISO27001",
+    "category": "Restrictions on changes to software packages",
+    "title": "Modifications to software packages shall be discouraged, limited to necessary changes and all changes shall be strictly controlled.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "NIST-NIST-SSDF-PS.2.1",
+        "NIST-NIST-SSDF-PS.1.1"
+      ]
+    },
+    "recommendation": "1. Store all source code in a code repository, and restrict access to it.\n2. Use version control features of the repository to track all changes made to code with accountability to the individual developer account.\n3. Use code signing to help protect the integrity and provenance of executables.\n4. Use cryptographic hashes to help protect the integrity of files.\n5. Create and maintain a software bill of materials (SBOM) for each piece of software stored in the repository.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "A.14.2.5",
+    "standard": "ISO27001",
+    "category": "Secure system engineering principles",
+    "title": "Principles for engineering secure systems shall be established, documented, maintained and applied to any information system implementation efforts.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C4"
+      ],
+      "iso27001": [],
+      "nist": [
+        "NIST-NIST-SSDF-PW.1",
+        "NIST-NIST-SSDF-PW.4"
+      ]
+    },
+    "recommendation": "1. Ensure the criteria adequately indicate how effectively security risk is being managed.\n2. Define key performance indicators (KPIs) for software security.\n3.  Add software security criteria to existing checks (e.g., the Definition of Done in agile SDLC methodologies).\n4. Review the artifacts generated as part of the software development workflow system to determine if they meet the criteria purposes.\n5. Record security check approvals, rejections, and requests for exception as part of the workflow and tracking system.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "A.14.2.6",
+    "standard": "ISO27001",
+    "category": "Secure development environment",
+    "title": "Organizations shall establish and appropriately protect secure development environments for system development and integration efforts that cover the entire system development lifecycle.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "NIST-NIST-SSDF-PO.1"
+      ]
+    },
+    "recommendation": "Ensure that development environments are protected to ensure the malicious or accidental development that may compromise confidentiality, integrity and availability of the underlying systems and/or data is avoided."
+  },
+  {
+    "id": "A.14.2.7",
+    "standard": "ISO27001",
+    "category": "Outsourced development",
+    "title": "The organization shall supervise and monitor the activity of outsourced\nsystem development.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "In cases where system and software development is outsourced either wholly or partly to external parties, there must be controls in place to supervise and monitor the activity of outsourced system development. Security requirements must be specified in a contract and nondisclosure and confidentiality agreements must be put in place.\n\nGood coverage here: https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/"
+  },
+  {
+    "id": "A.14.2.8",
+    "standard": "ISO27001",
+    "category": "System security testing",
+    "title": "Testing of security functionality shall be carried out during development.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "NIST-NIST-SSDF-PO.4",
+        "NIST-NIST-SSDF-PW.6"
+      ]
+    },
+    "recommendation": "Ensure that specific testing of security functionality for any development work must be carried out and signed-off by an appropriate authority with security competency and responsibility. Expected outcomes of security testing should be documented before testing starts.\u00a0\n\nGood coverage here: https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/"
+  },
+  {
+    "id": "A.14.2.9",
+    "standard": "ISO27001",
+    "category": "System acceptance testing",
+    "title": "Acceptance testing programs and related criteria shall be established\nfor new information systems, upgrades and new versions.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": [
+        "NIST-NIST-SSDF-PO.4"
+      ]
+    },
+    "recommendation": "Software development organizations must establish\u00a0acceptance testing programs and related criteria for new information systems and new versions. For acceptance testing, the tests and the criteria for demonstrating a successful test should be designed and developed based on business requirements before tests being carried out. Acceptance testing should also include security testing. \n\nGood coverage here: https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/"
+  },
+  {
+    "id": "A.14.3.1",
+    "standard": "ISO27001",
+    "category": "Protection of test data",
+    "title": "Test data shall be selected carefully, protected and controlled.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C8"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "Ensure that:\n1) Test data isselected carefully, and protected. \n2) Test data should ideally be created in a generic form with no relation to live system data. \n\nGood coverage here: https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/"
+  },
+  {
+    "id": "PO.1-1",
+    "standard": "NIST",
+    "category": "Define Security Requirements for Software Development",
+    "title": "Identify all applicable security requirements for the organization\u2019s general software development, and maintain the requirements over time.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C1-1"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Define policies that specify the security requirements for the organization\u2019s software to meet, including secure coding practices for developers to follow.\n2. Define policies that specify software architecture requirements, such as making code modular to facilitate code reuse and easier updates, and isolating security functionality from other functionality during code execution.\n3. Define policies for securing the development infrastructure, such as developer workstations and code repositories.\n4. Ensure policies cover the entire software life cycle, including notifying users of the impending end of software support and the date of software end-of-life, when the software will no longer function properly.\n5. Use a well-known set of security requirements as a structure or lexicon for defining the organization\u2019s requirements. This set can readily be mapped to other third-party security requirements the organization is also subject to.\n6. Review and update the requirements after each response to a vulnerability incident.\n7. Conduct a periodic (typically at least annual) review of all security requirements.\n8 Promptly review new external requirements and updates to existing external requirements.\n9. Educate affected developers on the impending changes in requirements.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PO.2-1",
+    "standard": "NIST",
+    "category": "Implement Roles and Responsibilities",
+    "title": "Create new roles and alter responsibilities for existing roles to encompass all parts of the SSDF. Periodically review the defined roles and responsibilities, and update them as needed.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C1-2"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Define SSDF-related roles and responsibilities for all members of the software development team.\n2. Integrate the security roles into the software development team.\n3. Define roles and responsibilities for cybersecurity staff, security champions, senior management, software developers, product owners, and others involved in the SDLC.\n4. Conduct an annual review of all roles and responsibilities.\n5. Educate affected individuals on the impending changes in roles and responsibilities.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PO.2-2",
+    "standard": "NIST",
+    "category": "Implement Roles and Responsibilities",
+    "title": "Provide role-specific training for all personnel in roles with responsibilities that contribute to secure development. Periodically review role-specific training and update it as needed.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.6"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Document the desired outcomes of training for each role.\n2. Acquire or create training for each role; acquired training may need customization for the organization.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PO.3-1",
+    "standard": "NIST",
+    "category": "Implement a Supporting Toolchain",
+    "title": "Specify which tools or tool types are to be included in each toolchain and which tools or tool types are mandatory, along with how the toolchain components are to be integrated with each other.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C3"
+      ],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Define categories of toolchains, and specify the mandatory tools or tool types to be used for each category.\n2. Use automated technology for toolchain management and orchestration.\n3. Identify security tools to integrate into the developer toolchain.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PO.3-2",
+    "standard": "NIST",
+    "category": "Implement a Supporting Toolchain",
+    "title": "Following sound security practices, deploy and configure tools, integrate them within the toolchain, and maintain the individual tools and the toolchain as a whole.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Evaluate, select, and acquire tools.\n2. Integrate tools with other tools and with existing software development processes and workflows.\n3. Update, upgrade, and replace existing tools.\n4. Monitor tool logs for potential operational and security issues.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PO.3-3",
+    "standard": "NIST",
+    "category": "Implement a Supporting Toolchain",
+    "title": "Configure tools to collect evidence and artifacts of their support of the secure software development practices.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.12.6.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Use the organization\u2019s existing workflow or bug tracking systems to create an audit trail of secure development-related actions performed.\n2. Determine how often the collected information should be audited, and implement processes to perform the auditing.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PO.4-1",
+    "standard": "NIST",
+    "category": "Define criteria for software security checks throughout the SDLC.",
+    "title": "Define criteria for software security checks at one or more points within the SDLC.",
+    "description": "",
+    "mappings": {
+      "owasp": [
+        "OPSC-C3"
+      ],
+      "iso27001": [
+        "2013-A.14.2.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Ensure the criteria adequately indicate how effectively security risk is being managed.\n2. Define key performance indicators (KPIs) for software security.\n3.  Add software security criteria to existing checks (e.g., the Definition of Done in agile SDLC methodologies).\n4. Review the artifacts generated as part of the software development workflow system to determine if they meet the criteria purposes.\n5. Record security check approvals, rejections, and requests for exception as part of the workflow and tracking system.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PO.4-2",
+    "standard": "NIST",
+    "category": "Define criteria for software security checks throughout the SDLC.",
+    "title": "Implement processes, mechanisms, etc. to gather the necessary information in support of the criteria.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.8",
+        "2013-A.14.2.9"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Use the toolchain to automatically gather information that informs security decision making.\n2. Deploy additional tools if needed to support generation and collection of information supporting the criteria.\n \n3. Automate decision making processes utilizing the criteria.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PS.1-1",
+    "standard": "NIST",
+    "category": "Protect All Forms of Code from Unauthorized Access and Tampering",
+    "title": "Store all forms of code, including source code and executable code, based on the principle of least privilege so that only authorized personnel have the necessary forms of access. The protection needed will vary based on the nature of the code. For example, some code may be intended for public access, in which case its integrity and availability should be protected; other code may also need its confidentiality protected.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.2"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Store all source code in a code repository, and restrict access to it.\n2. Use version control features of the repository to track all changes made to code with accountability to the individual developer account.\n3. Use code signing to help protect the integrity and provenance of executables.\n4. Use cryptographic hashes to help protect the integrity of files.\n5. Create and maintain a software bill of materials (SBOM) for each piece of software stored in the repository.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PS.2-1",
+    "standard": "NIST",
+    "category": "Provide a Mechanism for Verifying Software Release Integrity",
+    "title": "Make verification information available to software consumers.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.4"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Post cryptographic hashes for release files on a well-secured website.\n2. Use an established certificate authority for code signing so consumers can confirm the validity of signatures.\n3. Periodically review the code signing processes, including certificate renewal and protection.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PS.3-1",
+    "standard": "NIST",
+    "category": "Securely archive a copy of each release and all of its components (e.g., code, package files, third-party libraries, documentation), and release integrity verification information.",
+    "title": "Securely archive a copy of each release and all of its components, such as code, package files, third-party libraries, documentation, and release integrity verification information.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.3"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Store all release files in a repository, and restrict access to them.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.1-1",
+    "standard": "NIST",
+    "category": "Take Security Requirements and Risk Information into Account During Software Design",
+    "title": "Use threat modeling, attack modeling, attack surface mapping, and/or other forms of risk modeling to help assess the security risk for the software.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Train the development team to create threat models and attack models, and to analyze how to address the risks and implement mitigations.\n2. Perform more rigorous assessments for high-risk areas, such as protecting sensitive data.\n3. Review vulnerability reports and statistics for previous software.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.2-1",
+    "standard": "NIST",
+    "category": "Review the Software Design to Verify Compliance with Security Requirements and Risk Information",
+    "title": "Have someone qualified who was not involved with the software design review it to confirm it meets all the security requirements and satisfactorily addresses the identified risk information.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Review the software design to confirm it addresses all the security requirements.\n2. Review the risk models created during software design to determine if they appear to adequately identify the risks.\n3. Review the software design to confirm it satisfactorily addresses the risks identified by the risk models.\n4. Have the software\u2019s designer correct all failures to meet the requirements.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.3-1",
+    "standard": "NIST",
+    "category": "Verify Third-Party Software Complies with Security Requirements",
+    "title": "Communicate requirements to vendors, open source communities, and other third parties who may provide software modules and services to the organization for reuse by the organization\u2019s own software.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Define a core set of security requirements, and include them in acquisition documents, software contracts, and other agreements with third parties.\n2. Define the security-related criteria for selecting commercial and open source software.\n3. Require the providers of commercial software modules and services to provide evidence that their software complies with the organization\u2019s security requirements.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.4-1",
+    "standard": "NIST",
+    "category": "Reuse Existing, Well-Secured Software When Feasible Instead of Duplicating Functionality",
+    "title": "Acquire well-secured software libraries, modules, middleware, frameworks, and other components from third parties for use by the organization\u2019s software.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.7"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Review and evaluate the third-party software components in the context of their expected use. If a component is to be used in a substantially different way in the future, perform the review and evaluation again with that new context in mind.\n2. Establish an organization-wide software repository to host sanctioned and vetted open source components.\n3. Maintain a list of approved commercial software components and component versions.\n4. Designate which components must be included by software to be developed.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.4-2",
+    "standard": "NIST",
+    "category": "Reuse Existing, Well-Secured Software When Feasible Instead of Duplicating Functionality",
+    "title": "Create well-secured software components in-house following SDLC processes to meet common internal software development needs that cannot be better met by third-party software.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Follow the organization-established security practices for secure software development.\n2. Maintain an organization-wide software repository for these components.\n3. Designate which components must be included by software to be developed.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.4-3",
+    "standard": "NIST",
+    "category": "Reuse Existing, Well-Secured Software When Feasible Instead of Duplicating Functionality",
+    "title": "Where appropriate, build in support for using standardized security features and services, such as integrating with log management, identity management, access control, and vulnerability management systems.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.5"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Maintain an organization-wide software repository of modules for supporting standardized security features and services.\n2. Designate which security features and services must be supported by software to be developed.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.5-1",
+    "standard": "NIST",
+    "category": "Create Source Code Adhering to Secure Coding Practices",
+    "title": "Follow all secure coding practices appropriate to the development languages and environment.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Validate all untrusted input, and validate and properly encode all output.\n \n2. Avoid using unsafe functions and calls.\n3. Handle errors gracefully.\n4. Provide logging and tracing capabilities.\n5. Use development environments with features that encourage or require the use of secure coding practices.\n6. Follow procedures for manually ensuring compliance with secure coding practices.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.5-2",
+    "standard": "NIST",
+    "category": "Create Source Code Adhering to Secure Coding Practices",
+    "title": "Have the developer review their own human-readable code, analyze their own human-readable code, and/or test their own executable code.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Have developers review their own code.\n2. Perform peer review of code.\n3. Use peer reviewing tools that facilitate the peer review process and document all discussions and other feedback.\n4. Use a static analysis tool to automatically check code for vulnerabilities and for compliance with the organization\u2019s secure coding standards, with a human reviewing issues reported by the tool and remediating them as necessary.\n5. Use review checklists to verify the code complies with the requirements.\n6. Use automated tools to identify and remediate documented and verified unsafe software practices on a continuous basis as human-readable code is checked into the code repository.\n7. Identify and document the root cause of each discovered issue.\n8. Document lessons learned from code review and analysis in a knowledge base that developers can access and search.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.6-1",
+    "standard": "NIST",
+    "category": "Configure the Compilation and Build Processes to Improve Executable Security",
+    "title": "Use compiler and build tools that offer features to improve executable security.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.8"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Consider replacing older compiler and build tools with up-to-date versions.\n\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.6-2",
+    "standard": "NIST",
+    "category": "Configure the Compilation and Build Processes to Improve Executable Security",
+    "title": "Determine which features should be used and how each feature should be configured, then implement the approved configuration for compilation and build tools, processes, etc.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Enable compiler features that produce warnings for potentially poorly secured code during the compilation process.\n2. Enable compiler features that randomize characteristics, such as memory location usage, that would otherwise be easily predictable and thus exploitable.\n3. Conduct testing to ensure the features are working as expected and not inadvertently causing any operational issues or other problems.\n4. Verify the approved configuration is enabled for compilation and build tools, processes, etc.\n5. Document information about the compilation and build tool configuration in a knowledge base that developers can access and search.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.7-1",
+    "standard": "NIST",
+    "category": "Review and/or Analyze Human-Readable Code to Identify Vulnerabilities and Verify Compliance with Security Requirements",
+    "title": "Determine whether code review (a person directly looks at the code to find issues) and/or code analysis (tools are used to find issues in code, either in a fully automated way or in conjunction with a person) should be used.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Follow the organization\u2019s policies or guidelines for when code review should be performed and how it should be conducted.\n2.Follow the organization\u2019s policies or guidelines for when code analysis should be performed and how it should be conducted.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.7-2",
+    "standard": "NIST",
+    "category": "Review and/or Analyze Human-Readable Code to Identify Vulnerabilities and Verify Compliance with Security Requirements",
+    "title": "Perform the code review and/or code analysis, and document and triage all discovered issues and recommended remediations in the development team\u2019s workflow or bug-tracking system.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Have developers review their own code.\n2. Perform peer review of code.\n3. Use peer reviewing tools that facilitate the peer review process and document all discussions and other feedback.\n4. Use a static analysis tool to automatically check code for vulnerabilities and for compliance with the organization\u2019s secure coding standards, with a human reviewing issues reported by the tool and remediating them as necessary.\n5. Use review checklists to verify the code complies with the requirements.\n6. Use automated tools to identify and remediate documented and verified unsafe software practices on a continuous basis as human-readable code is checked into the code repository.\n7. Identify and document the root cause of each discovered issue.\n8. Document lessons learned from code review and analysis in a knowledge base that developers can access and search.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.8-1",
+    "standard": "NIST",
+    "category": "Test Executable Code to Identify Vulnerabilities and Verify Compliance with Security Requirements",
+    "title": "Determine if executable code testing should be performed and, if so, which types should be used.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Follow the organization\u2019s policies or guidelines for when code testing should be performed and how it should be conducted.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.8-2",
+    "standard": "NIST",
+    "category": "Test Executable Code to Identify Vulnerabilities and Verify Compliance with Security Requirements",
+    "title": "Design the tests, perform the testing, and document the results.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Perform robust functional testing of security features.\n \n2. Integrate dynamic vulnerability testing into the project\u2019s automated test suite.\n3. Incorporate tests for previously reported vulnerabilities into the project\u2019s automated test suite to ensure that errors are not reintroduced.\n4. Use automated fuzz testing tools to find issues with input handling by native code.\n5. Use penetration testing to simulate how an attacker might attempt to compromise the software only in high-risk scenarios if resources are available.\n6. Use automated tools to identify and remediate documented and verified unsafe software practices on a continuous basis as executable code is checked into the code repository.\n7. Identify and document the root cause of each discovered issue.\n8. Document lessons learned from code testing in a knowledge base that developers can access and search.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.9-1",
+    "standard": "NIST",
+    "category": "Configure the Software to Have Secure Settings by Default",
+    "title": "Determine how to configure each setting that has an effect on security so the default settings are secure and they do not weaken the security functions provided by the platform, network infrastructure, or services.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Conduct testing to ensure the settings are working as expected and not inadvertently causing any security weaknesses, operational issues, or other problems.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "PW.9-2",
+    "standard": "NIST",
+    "category": "Configure the Software to Have Secure Settings by Default",
+    "title": "Implement the default settings and document each setting for software administrators.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Verify the approved configuration is in place for the software.\n2. Document each setting\u2019s purpose, options, default value, security relevance, potential operational impact, and relationships with other settings.\n3. Document how each setting can be implemented by software administrators.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "RV.1-1",
+    "standard": "NIST",
+    "category": "Identify and Confirm Vulnerabilities on an Ongoing Basis",
+    "title": "Gather information from consumers and public sources on potential vulnerabilities in the software and any third-party components the software uses, and investigate all credible reports.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Establish a vulnerability response program, and make it easy for security researchers to learn about your program and report possible vulnerabilities.\n2. Monitor vulnerability databases, security mailing lists, and other sources of vulnerability reports through manual or automated means.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "RV.1-2",
+    "standard": "NIST",
+    "category": "Identify and Confirm Vulnerabilities on an Ongoing Basis",
+    "title": "Periodically review, analyze, and/or test the software\u2019s code to identify previously undetected vulnerabilities.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Configure the toolchain to perform automated code analysis and testing on a regular basis.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "RV.1-3",
+    "standard": "NIST",
+    "category": "Identify and Confirm Vulnerabilities on an Ongoing Basis",
+    "title": "Have an incident response capability to coordinate response to vulnerability reports.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Have a policy that addresses vulnerability disclosure and remediation, and implement the processes needed to support that policy.\n\n2. Have a security response playbook to handle a generic reported vulnerability, a report of zero-days, a vulnerability being exploited in the wild, and a major ongoing incident involving multiple parties.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "RV.2-1",
+    "standard": "NIST",
+    "category": "Assess and Prioritize the Remediation of All Vulnerabilities",
+    "title": "Analyze each vulnerability which is not being exploited to determine how much effort would be required to remediate it, what the potential impact of vulnerability exploitation would be, what resources are required to weaponize the vulnerability (with the assumption that the vulnerability will be exploited in the near future), and how vulnerability remediation should be prioritized, along with any other relevant factors.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Use issue tracking or bug tracking software to document each vulnerability.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "RV.3-1",
+    "standard": "NIST",
+    "category": "Analyze Vulnerabilities to Identify Their Root Causes",
+    "title": "Analyze all identified vulnerabilities to determine the root cause of each vulnerability.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Document the root cause of each discovered issue.\n2. Document lessons learned from root cause analysis in a knowledge base that developers can access and search.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "RV.3-2",
+    "standard": "NIST",
+    "category": "Analyze Vulnerabilities to Identify Their Root Causes",
+    "title": "Analyze the root causes over time to identify patterns, such as when a particular secure coding practice not being followed consistently.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Document lessons learned from root cause analysis in a knowledge base that developers can access and search.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "RV.3-3",
+    "standard": "NIST",
+    "category": "Analyze Vulnerabilities to Identify Their Root Causes",
+    "title": "Review the software for other instances of the reported problem and fix them proactively rather than waiting for external reports.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [],
+      "nist": []
+    },
+    "recommendation": "1. Have developers review their own code.\n2. Perform peer review of code.\n3. Use peer reviewing tools that facilitate the peer review process and document all discussions and other feedback.\n4. Use a static analysis tool to automatically check code for vulnerabilities and for compliance with the organization\u2019s secure coding standards, with a human reviewing issues reported by the tool and remediating them as necessary.\n5. Use review checklists to verify the code complies with the requirements.\n6. Use automated tools to identify and remediate documented and verified unsafe software practices on a continuous basis as human-readable code is checked into the code repository.\n7. Identify and document the root cause of each discovered issue.\n8. Document lessons learned from code review and analysis in a knowledge base.\n\n[REF: NIST SSDF]"
+  },
+  {
+    "id": "RV.3-4",
+    "standard": "NIST",
+    "category": "Analyze Vulnerabilities to Identify Their Root Causes",
+    "title": "Review the SDLC process and update it as appropriate to prevent (or reduce the likelihood of) the root cause recurring in updates to this software or in new software that is created.",
+    "description": "",
+    "mappings": {
+      "owasp": [],
+      "iso27001": [
+        "2013-A.14.2.1"
+      ],
+      "nist": []
+    },
+    "recommendation": "1. Document lessons learned from root cause analysis in a knowledge base that developers can access and search.\n2. Plan and implement changes to the appropriate SSDF practices.\n\n[REF: NIST SSDF]"
+  }
+]

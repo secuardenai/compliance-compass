@@ -1,0 +1,98 @@
+std_code,primary_standard,cntrl_code,addressed_control,cntrl_number        ,recommendations,mapping_id,action_items
+ISO27001,ISO27001:2013 ,A.9.2.3,Management of privileged access rights,1,The allocation and use of privileged access rights shall be restricted and controlled.,"OPSC-C3;
+OPSC-C7;
+NIST:NIST-SSDF:PO.2;","(1) Maintain a process to determine the privileged access requriements for each application/system.
+(2) All grants of privileged access must be on a need to use basis and not a blanket approval.
+(3) Maintain audit log of privilege permissions grants. 
+(4) Ensure that these are reviewed at regular intervals to ensure that all permission on the applications are mapped to role/duties."
+ISO27001 ,ISO27001:2013 ,A.9.2.4,"Use of secret authentication
+information",1,"Users shall be required to follow the organization’s practices in theuse of secret authentication information.",OPSC-C6;,"Secret authentication information includes keys, passwords, pins, etc. and needs to be managed through a defined management workflow in the applications, systems.
+
+Ensure that:
+(1) There is a defined policy on authenticating users
+Ensure that all access grants to the restricted areas of an application/system verifies the identity of the requesting user.
+(2) Any workflows to reset authentication information must first verify the requestor identity"
+ISO27001,ISO27001:2013 ,A.10.1.2,Key management,1,"Verify that a policy on the use, protection and lifetime of cryptographic keys is developed and implemented through their whole lifecycle.",OPSC-C8;,(1) Develop a policy to provide guidance on the secure use of cyptographic keys that also includes guidance around the accepted key lifecycle management 
+ISO27001,ISO27001:2013,A.12.1.2,Change management,1,"Changes to the organization, business processes, information processing facilities and systems that affect information security shall be controlled.",NIST:NIST-SSDF:PS.1;,"Ensure that there is a well defined change management workflow. This doesnot necessarily mean that there has to be a change management commitee that review all changes. Rather there should be capabilities that can ensure that accidental or intentional changes don't end up affecting a system in unexpected ways. Example: enforce a rigorous PR review process for code changes, etc."
+ISO27001,ISO27001:2013,A.12.1.4,"Separation of development, testing and operational environments",2,"Development, testing, and operational environments shall be separated to reduce the risks of unauthorized access or changes to the operational environment.",,"1) Development and test environments must be kept separate from environments with live data.
+2) Ensure that there is a well defined change management workflow. This doesnot necessarily mean that there has to be a change management commitee that review all changes. Rather there should be capabilities that can ensure that accidental or intentional changes don't end up affecting a system in unexpected ways. Example: enforce a rigorous PR review process for code changes, etc."
+ISO27001,ISO27001:2013,A.12.3.1,Information backup,1,"Backup copies of information, software and system images shall be taken and tested regularly in accordance with an agreed backup policy.",OPSC-C8;,Ensure that regular testing of backups is carried out to ensure that restorations will be successful and can be achieved in a timely manner.
+ISO27001,ISO27001:2013,A.12.4.1 ,Event logging,1,"Event logs recording user activities, exceptions, faults and information security events shall be produced, kept and regularly reviewed.",OPSC-C5;,Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
+ISO27001,ISO27001:2013,A.12.4.2 ,Protection of log information,2,Logging facilities and log information shall be protected against tampering and unauthorized access.,OPSC-C5;,Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
+ISO27001,ISO27001:2013,A.12.4.3 ,Administrator and operator logs,3,System administrator and system operator activities shall be logged and the logs protected and regularly reviewed.,OPSC-C5;,Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
+ISO27001,ISO27001:2013,A.12.4.4 ,Clock synchronisation,4,The clocks of all relevant information processing systems within an organization or security domain shall be synchronised to a single reference time source.,OPSC-C9,Review the information here: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
+ISO27001,ISO27001:2013,A.12.6.1 ,Management of technical vulnerabilities,1,"Information about technical vulnerabilities of information systems being used shall be obtained in a timely fashion, the organization’s exposure to such vulnerabilities evaluated and appropriate measures taken to address the associated risk.",NIST:NIST-SSDF:RV.1;,"1. Have a policy that addresses vulnerability disclosure and remediation, and implement the processes needed to support that policy.
+
+2. Have a security response playbook to handle a generic reported vulnerability, a report of zero-days, a vulnerability being exploited in the wild, and a major ongoing incident involving multiple parties.
+
+[REF: NIST SSDF]"
+ISO27001,ISO27001:2013,A.12.6.2,Restrictions on software installation,2,Rules governing the installation of software by users shall be established and implemented.,OPSC-C3;,Provide development teams with a “white-list” what software may be installed or services that can be used. 
+ISO27001,ISO27001:2013,A.14.1.1,Information security requirements analysis and specification,1,The information security related requirements shall be included in the requirements for new information systems or enhancements to existing information systems.,OPSC-C1;,"As part of the secure development lifecycle, incorporate architecture reviews of an applications and its related services to ensure that security controls are implemented and enforced. These controls should atleast cover: Input validation, Exception Handling, Output Encoding, Use of Cryptography, Session Management, Authentication, Authorization and Audit Loggging."
+ISO27001,ISO27001:2013,A.14.1.2 ,Securing application services on public networks,2,"Information involved in application services passing over public networks shall be protected from fraudulent activity, contract dispute and unauthorized disclosure and modification.",OPSC-C3;,"(1) Enforce TLS (1.2 or above), with mutual authentication as far as possible, for any communications that travels over potentially untrusted network. This is applicable for internal networks too."
+ISO27001,ISO27001:2013,A.14.1.3 ,Protecting application services transactions ,3,"Information involved in application service transactions shall be protected to prevent incomplete transmission, mis-routing, unauthorized message alteration, unauthorized disclosure, unauthorized message duplication or replay.",OPSC-C3;,"(1) Enforce TLS (1.2 or above), with mutual authentication as far as possible, for any communications that travels over potentially untrusted network. This is applicable for internal networks too.
+
+(2) As part of the secure development lifecycle, allow the developers to have access to secure coding guidelines for their technology stack. These guidelines can be checklists that they review and learn, IDE plugins, etc.
+
+(3) As part of the secure development lifecycle, incorporate architecture reviews of an applications and its related services to ensure that security controls are implemented and enforced. These controls should atleast cover: Input validation, Exception Handling, Output Encoding, Use of Cryptography, Session Management, Authentication, Authorization and Audit Loggging.
+
+(4) Ensure that all input validations are performed at a point in the data flow. This is to ensure that an adversary cannot interfere with the validation logic. Refer the ""Input Validation"" information here: https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html "
+ISO27001,ISO27001:2013,A.14.2.1,Secure development policy,1,"Rules for the development of software and systems shall be establishedand applied to developments within the organization.","OPSC-C3;
+NIST-NIST-SSDF-PO.1;
+NIST-NIST-SSDF-RV.3;
+NIST-NIST-SSDF-PW.2;
+                
+                
+                
+                
+                
+                
+                ","Create a secure development lifecycle program/process that will enable development and security teams to ensure that security is incorporated into all phases of the software development workflow.
+
+References:
+https://www.microsoft.com/en-us/securityengineering/sdl"
+ISO27001,ISO27001:2013,A.14.2.2,System change control procedures,2,Changes to systems within the development lifecycle shall be controlled by the use of formal change control procedures.,NIST-NIST-SSDF-PS.1;,"Ensure that there is a well defined change management workflow. This doesnot necessarily mean that there has to be a change management commitee that review all changes. Rather there should be capabilities that can ensure that accidental or intentional changes don't end up affecting a system in unexpected ways. Example: enforce a rigorous PR review process for code changes, etc."
+ISO27001,ISO27001:2013,A.14.2.3,Technical review of applications after operating platform changes,3,"When operating platforms are changed, business critical applications shall be reviewed and tested to ensure there is no adverse impact on organizational operations or security.","NIST-NIST-SSDF-PS.3;
+NIST-NIST-SSDF-PO.1;","1. Perform robust functional testing of security features.
+2. Integrate dynamic vulnerability testing into the project’s automated test suite.
+3. Incorporate tests for previously reported vulnerabilities into the project’s automated test suite to ensure that errors are not reintroduced.
+4. Use automated fuzz testing tools to find issues with input handling by native code.
+5. Use penetration testing to simulate how an attacker might attempt to compromise the software only in high-risk scenarios if resources are available.
+6. Use automated tools to identify and remediate documented and verified unsafe software practices on a continuous basis as executable code is checked into the code repository.
+7. Identify and document the root cause of each discovered issue.
+8. Document lessons learned from code testing in a knowledge base that developers can access and search.
+
+[REF: NIST SSDF]"
+ISO27001,ISO27001:2013,A.14.2.4,Restrictions on changes to software packages,4,"Modifications to software packages shall be discouraged, limited to necessary changes and all changes shall be strictly controlled.","NIST-NIST-SSDF-PS.2.1; 
+NIST-NIST-SSDF-PS.1.1;","1. Store all source code in a code repository, and restrict access to it.
+2. Use version control features of the repository to track all changes made to code with accountability to the individual developer account.
+3. Use code signing to help protect the integrity and provenance of executables.
+4. Use cryptographic hashes to help protect the integrity of files.
+5. Create and maintain a software bill of materials (SBOM) for each piece of software stored in the repository.
+
+[REF: NIST SSDF]"
+ISO27001,ISO27001:2013,A.14.2.5 ,Secure system engineering principles,5,"Principles for engineering secure systems shall be established, documented, maintained and applied to any information system implementation efforts.","OPSC-C4;
+NIST-NIST-SSDF-PW.1;
+NIST-NIST-SSDF-PW.4;","1. Ensure the criteria adequately indicate how effectively security risk is being managed.
+2. Define key performance indicators (KPIs) for software security.
+3.  Add software security criteria to existing checks (e.g., the Definition of Done in agile SDLC methodologies).
+4. Review the artifacts generated as part of the software development workflow system to determine if they meet the criteria purposes.
+5. Record security check approvals, rejections, and requests for exception as part of the workflow and tracking system.
+
+
+[REF: NIST SSDF]"
+ISO27001,ISO27001:2013,A.14.2.6 ,Secure development environment,6,Organizations shall establish and appropriately protect secure development environments for system development and integration efforts that cover the entire system development lifecycle.,NIST-NIST-SSDF-PO.1;,"Ensure that development environments are protected to ensure the malicious or accidental development that may compromise confidentiality, integrity and availability of the underlying systems and/or data is avoided. "
+ISO27001,ISO27001:2013,A.14.2.7 ,Outsourced development,7,"The organization shall supervise and monitor the activity of outsourcedsystem development.",,"In cases where system and software development is outsourced either wholly or partly to external parties, there must be controls in place to supervise and monitor the activity of outsourced system development. Security requirements must be specified in a contract and nondisclosure and confidentiality agreements must be put in place.
+
+Good coverage here: https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/"
+ISO27001,ISO27001:2013,A.14.2.8 ,System security testing,8,Testing of security functionality shall be carried out during development.,"NIST-NIST-SSDF-PO.4;
+NIST-NIST-SSDF-PW.6;","Ensure that specific testing of security functionality for any development work must be carried out and signed-off by an appropriate authority with security competency and responsibility. Expected outcomes of security testing should be documented before testing starts. 
+
+Good coverage here: https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/"
+ISO27001,ISO27001:2013,A.14.2.9, System acceptance testing,9,"Acceptance testing programs and related criteria shall be establishedfor new information systems, upgrades and new versions.",NIST-NIST-SSDF-PO.4;,"Software development organizations must establish acceptance testing programs and related criteria for new information systems and new versions. For acceptance testing, the tests and the criteria for demonstrating a successful test should be designed and developed based on business requirements before tests being carried out. Acceptance testing should also include security testing. 
+
+Good coverage here: https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/"
+ISO27001,ISO27001:2013,A.14.3.1 ,Protection of test data,1,"Test data shall be selected carefully, protected and controlled.",OPSC-C8;,"Ensure that:
+1) Test data isselected carefully, and protected. 
+2) Test data should ideally be created in a generic form with no relation to live system data. 
+
+Good coverage here: https://www.isms.online/iso-27001/annex-a-14-system-acquisition-development-and-maintenance/"
