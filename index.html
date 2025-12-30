@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ComplianceCompass - Map application security requirements across OWASP, ISO27001, and NIST SSDF standards">
+    <meta property="og:title" content="ComplianceCompass - Navigate AppSec Compliance Standards">
+    <meta property="og:description" content="Open-source tool to map and understand AppSec requirements across multiple compliance frameworks">
+    <meta property="og:type" content="website">
+    <title>ComplianceCompass - Navigate AppSec Standards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-grid"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="url(#gradient)" stroke-width="2"/>
+                        <path d="M20 10 L20 30 M10 20 L30 20" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff"/>
+                                <stop offset="100%" style="stop-color:#7CC243"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">ComplianceCompass</span>
+                </div>
+                <nav class="nav">
+                    <a href="#explorer" class="nav-link">Explorer</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="https://github.com/SecuardenAI/compliance-compass" target="_blank" class="btn-github">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                        Star on GitHub
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Navigate <span class="gradient-text">AppSec Compliance</span> with Confidence
+                </h1>
+                <p class="hero-subtitle">
+                    Map application security requirements across OWASP, ISO27001, and NIST SSDF. 
+                    Open-source. Free forever. Built for security teams who need clarity.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="controlCount">Loading...</div>
+                        <div class="stat-label">Security Controls</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Standards Mapped</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="mappingCount">Loading...</div>
+                        <div class="stat-label">Cross-Mappings</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#explorer" class="btn-primary">
+                        Explore Standards
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                    <a href="#api" class="btn-secondary">View API Docs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards Overview -->
+    <section class="standards-overview">
+        <div class="container">
+            <h2 class="section-title">Standards Covered</h2>
+            <div class="standards-grid">
+                <div class="standard-card owasp">
+                    <div class="standard-icon">🛡️</div>
+                    <h3>OWASP Proactive Controls</h3>
+                    <p>Security techniques to build into software development</p>
+                    <div class="standard-badge">10 Controls</div>
+                </div>
+                <div class="standard-card iso">
+                    <div class="standard-icon">📋</div>
+                    <h3>ISO27001:2013</h3>
+                    <p>International standard for information security management</p>
+                    <div class="standard-badge">AppSec Focused</div>
+                </div>
+                <div class="standard-card nist">
+                    <div class="standard-icon">🏛️</div>
+                    <h3>NIST SSDF</h3>
+                    <p>Secure Software Development Framework practices</p>
+                    <div class="standard-badge">Framework</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Explorer -->
+    <section id="explorer" class="explorer">
+        <div class="container">
+            <h2 class="section-title">Compliance Explorer</h2>
+            <p class="section-subtitle">Search and filter across all standards to find what you need</p>
+            
+            <!-- Search and Filters -->
+            <div class="search-section">
+                <div class="search-bar">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Search controls, requirements, or keywords...">
+                    <button id="clearSearch" class="clear-btn" style="display: none;">✕</button>
+                </div>
+                <div class="filters">
+                    <select id="standardFilter" class="filter-select">
+                        <option value="">All Standards</option>
+                        <option value="OWASP">OWASP Proactive Controls</option>
+                        <option value="ISO27001">ISO27001:2013</option>
+                        <option value="NIST">NIST SSDF</option>
+                    </select>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-header">
+                <div class="results-count">
+                    Showing <span id="resultCount">0</span> controls
+                </div>
+                <button id="exportBtn" class="export-btn">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    Export Results
+                </button>
+            </div>
+
+            <!-- Results Container -->
+            <div id="resultsContainer" class="results-container">
+                <div class="loading">Loading compliance data...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Documentation -->
+    <section id="api" class="api-section">
+        <div class="container">
+            <h2 class="section-title">Programmatic Access</h2>
+            <p class="section-subtitle">Use our data in your own tools and workflows</p>
+            
+            <div class="api-grid">
+                <div class="api-card">
+                    <h3>REST API</h3>
+                    <p>Access compliance mappings via simple HTTP requests (static JSON endpoints)</p>
+                    <pre><code># Get all controls
+GET /api/all.json
+
+# Get controls by standard
+GET /api/standards/owasp.json
+GET /api/standards/iso27001.json
+GET /api/standards/nist.json
+
+# Get specific control
+GET /api/controls/c1-1.json
+
+# Get control mappings
+GET /api/mappings/c1-1.json</code></pre>
+                    <a href="https://github.com/SecuardenAI/compliance-compass/blob/main/API.md" class="api-link">View Documentation →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About ComplianceCompass</h2>
+                    <p>
+                        ComplianceCompass was born from a simple frustration: understanding what you need to implement 
+                        to be compliant with multiple security standards is unnecessarily hard.
+                    </p>
+                    <p>
+                        We've mapped application security requirements across OWASP Proactive Controls, ISO27001:2013, 
+                        and NIST SSDF so you can:
+                    </p>
+                    <ul class="feature-list">
+                        <li>✓ See which controls in different standards address the same security concern</li>
+                        <li>✓ Understand what needs to be implemented for compliance</li>
+                        <li>✓ Get actionable recommendations for each control</li>
+                        <li>✓ Export mappings for your audit documentation</li>
+                    </ul>
+                    <p>
+                        This project is open-source, community-driven, and free forever. Built by 
+                        <a href="https://secuarden.com" target="_blank">Secuarden</a> to help security teams 
+                        navigate compliance with confidence.
+                    </p>
+                    <div class="about-cta">
+                        <a href="https://github.com/SecuardenAI/compliance-compass" target="_blank" class="btn-primary">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            Contribute on GitHub
+                        </a>
+                        <a href="https://secuarden.com" target="_blank" class="btn-secondary">Learn About Secuarden</a>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="mapping-diagram">
+                        <div class="mapping-node owasp-node">OWASP</div>
+                        <div class="mapping-node iso-node">ISO27001</div>
+                        <div class="mapping-node nist-node">NIST</div>
+                        <svg class="mapping-lines" width="100%" height="100%">
+                            <line x1="33%" y1="20%" x2="50%" y2="50%" stroke="url(#lineGradient)" stroke-width="2"/>
+                            <line x1="67%" y1="20%" x2="50%" y2="50%" stroke="url(#lineGradient)" stroke-width="2"/>
+                            <line x1="50%" y1="80%" x2="50%" y2="50%" stroke="url(#lineGradient)" stroke-width="2"/>
+                            <defs>
+                                <linearGradient id="lineGradient">
+                                    <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.5"/>
+                                    <stop offset="100%" stop-color="#7CC243" stop-opacity="0.5"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="mapping-center">
+                            <div class="pulse-ring"></div>
+                            Cross-Mapped
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ComplianceCompass</h4>
+                    <p>Navigate AppSec compliance with confidence.</p>
+                    <p class="footer-license">MIT Licensed • Open Source</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="https://github.com/SecuardenAI/compliance-compass">GitHub Repository</a>
+                    <a href="https://github.com/SecuardenAI/compliance-compass/blob/main/API.md">API Documentation</a>
+                    <a href="https://github.com/SecuardenAI/compliance-compass/issues">Report Issue</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Built By</h4>
+                    <a href="https://secuarden.com" target="_blank">Secuarden</a>
+                    <a href="https://github.com/SecuardenAI" target="_blank">SecuardenAI</a>
+                    <a href="https://twitter.com/secuarden" target="_blank">Twitter</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Standards</h4>
+                    <a href="https://owasp.org/www-project-proactive-controls/" target="_blank">OWASP Proactive Controls</a>
+                    <a href="https://www.iso.org/standard/54534.html" target="_blank">ISO27001:2013</a>
+                    <a href="https://csrc.nist.gov/publications/detail/sp/800-218/final" target="_blank">NIST SSDF</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Secuarden. Released under MIT License.</p>
+                <p>Data sourced from public compliance frameworks. Mappings are interpretive and should be verified for your specific use case.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
