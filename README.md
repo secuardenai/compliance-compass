@@ -1,6 +1,9 @@
 # ComplianceCompass 🧭
 
-> Navigate application security compliance with confidence
+> The missing layer between AppSec findings and SOC2 / ISO / PCI evidence.
+>
+>> Security tools find issues. Auditors ask what framework does this satisfy?
+>> **ComplianceCompass** answers that.
 
 **ComplianceCompass** is an open-source tool that maps application security requirements across OWASP Proactive Controls, ISO27001:2013, and NIST SSDF. Stop guessing what controls you need to implement—see exactly how security requirements map across frameworks.
 
@@ -28,7 +31,13 @@ ComplianceCompass solves this by providing:
 ✅ **Interactive search** to find controls by keyword, category, or standard  
 ✅ **Export capabilities** to generate documentation for auditors  
 
----
+
+> ### Not a GRC tool. Not a scanner. A translation layer.
+
+## Who this repo is for?
+  - Security engineers doing audits
+  - Startups prepping for SOC 2
+  - Consultants writing compliance reports
 
 ## 🚀 Quick Start
 
